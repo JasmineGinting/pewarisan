@@ -1,0 +1,55 @@
+package pewarisan;
+
+public class Latihan_4_1 {
+    private int x;
+    
+    public void mutX(int x) {
+        this.x = x;
+    }
+    
+    public int accX() {
+        return x;
+    }
+    
+    public void cetak() {
+        System.out.println("nilai x = " + x);
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+public class Latihan_4_2 extends Latihan_4_1 {
+    private int y;
+    
+    public void mutY(int y) {
+        this.y = y;
+    }
+    
+    public int accY() {
+        return y;
+    }
+    
+    public void cetak() {
+        super.cetak();
+        System.out.println("nilai y = " + y);
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+public class Uji_Lat4 {
+
+    public static void main(String[] args) {
+        Latihan_4_2 obj = new Latihan_4_2();
+        
+        obj.mutX(12);
+        obj.mutY(9);
+        
+        obj.cetak();
+    }
+    
+}
