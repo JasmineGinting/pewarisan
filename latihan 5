@@ -30,3 +30,53 @@ public class Latihan_5 {
         this.kecepatan = temp + this.kecepatan;
     }
 }
+
+====== ======
+
+package pewarisan;
+
+public class Uji_Lat5 extends Latihan_5 {
+    
+    //field
+    private int tinggiTangki;
+    
+    //konstruktor
+    public Uji_Lat5(int penumpang_awal, int kecepatan_awal, int rem_awal, int tinggiTangki) {
+       super(penumpang_awal, kecepatan_awal, rem_awal);
+        this.tinggiTangki = tinggiTangki;
+    }
+    
+    //methods
+    public void setTinngi(int tinggi) {
+        tinggiTangki = tinggi;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("----mulai berjalan----");
+        Uji_Lat5 pertamina = new Uji_Lat5(0, 0, 0, 0);
+        
+        pertamina.setPenumpang(2);
+        pertamina.setKecepatan(60);
+        pertamina.setPelambatan(25);
+        pertamina.setTinngi(25);
+        
+        System.out.println("penumpang " + pertamina.penumpang);
+        System.out.println("kecepatan " + pertamina.kecepatan + " km/jam");
+        System.out.println("pelambatan " + pertamina.rem + " km/jam");
+        System.out.println("tinngi tangki " + pertamina.tinggiTangki + " m");
+        System.out.println();
+        
+        pertamina.addKecepatan(10);
+        System.out.println("penumpang " + pertamina.penumpang);
+        System.out.println("kecepatan " + pertamina.kecepatan + " km/jam");
+        System.out.println("pelambatan " + pertamina.rem + " km/jam");
+        System.out.println("tinngi tangki " + pertamina.tinggiTangki + " m"); 
+        System.out.println();
+        
+        System.out.println("----sampai di tujuan----");
+        System.out.println("penumpang " + pertamina.penumpang);
+        System.out.println("kecepatan terakhir " + (pertamina.kecepatan - pertamina.rem) + " km/jam");
+        System.out.println("tinngi tangki " + pertamina.tinggiTangki + " m");
+        System.out.println();    
+    }
+}
