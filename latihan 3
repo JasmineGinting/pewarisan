@@ -1,0 +1,83 @@
+package pewarisan;
+
+public class Latihan_3_1 {
+
+    private int umur;
+    private String gender;
+    String jenis;
+
+    public Latihan_3_1(int umur, String gender, String jenis) {
+        this.umur = umur;
+        this.gender = gender;
+        this.jenis = jenis;
+    }
+
+    public void JenisHewan() {
+        System.out.println("Ini adalah " + jenis);
+    }
+
+    public void UmurHewan() {
+        System.out.println(jenis + " ini berumur " + umur + " tahun");
+    }
+
+    public void GenderHewan() {
+        System.out.println(jenis + " ini " + gender);
+    }
+    
+    public void cetak() {
+        Latihan_3_1 omnivor = new Latihan_3_1(53, "betina", "ikan koi");
+        
+        omnivor.JenisHewan();
+        omnivor.UmurHewan();
+        omnivor.GenderHewan();
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+public class Latihan_3_2 extends Latihan_3_1 {
+
+    int umur;
+    String gender;
+    String jenis;
+
+    public Latihan_3_2(int umur, String gender, String jenis) {
+        super(umur, gender, jenis);
+        this.umur = umur;
+        this.gender = gender;
+        this.jenis = jenis;  
+    }
+
+    @Override
+    public void JenisHewan() {
+        System.out.println("Ini adalah " + jenis);
+    }
+
+    @Override
+    public void UmurHewan() {
+        System.out.println(jenis + " ini berumur " + umur);
+    }
+
+    @Override
+    public void GenderHewan() {
+        System.out.println(jenis + " ini " + gender);
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+public class Uji_Lat3 {
+
+    public static void main(String[] args) {
+        Latihan_3_1 karnivor = new Latihan_3_1(53, "betina", "ikan koi");
+        karnivor.cetak();
+
+        Latihan_3_2 baru = new Latihan_3_2(53, "betina", "ikan koi");
+        baru.JenisHewan();
+    }
+
+}
