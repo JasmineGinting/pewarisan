@@ -120,3 +120,18 @@ public class Prak_1_3 extends Prak_1_2 {
         System.out.println("kelas : " + this.kelas);
     }
 }
+
+====== ======
+
+package pewarisan;
+
+public class Uji_Prak1 {
+    
+    public static void main(String[] args) {
+        
+        Prak_1_3 me = new Prak_1_3(50, 15, 1500, "21187", 3, 15, " ");
+        me.getKelas();
+        me.cetak();
+    }   
+}
+
