@@ -1,0 +1,49 @@
+package pewarisan;
+
+public class Latihan_1_1 {
+    
+    private int x = 10;
+    
+    protected void ProtekTed() {
+        System.out.println("method ini hanya untuk anaknya :)");
+    }
+    
+    public void cetak() {
+        System.out.println("nilai x = " + x);
+        System.out.println("dipanggil dari " + this.getClass().getName());
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+public class Latihan_1_2 extends Latihan_1_1 {
+    
+    private int y = 5;
+    
+    protected void TerProtek() {
+        System.out.println("nilai y = " + y);
+        ProtekTed();
+        cetak();
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+public class Uji_Lat1 {
+
+    public static void main(String[] args) {
+
+        Latihan_1_2 objek = new Latihan_1_2();
+        objek.TerProtek();
+        objek.cetak();
+        
+        Latihan_1_1 obyek = new Latihan_1_1();
+        obyek.ProtekTed();
+        obyek.cetak();
+    }
+
+}
