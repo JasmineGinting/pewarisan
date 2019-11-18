@@ -1,0 +1,56 @@
+package pewarisan;
+
+class Latihan_2_1 {
+    
+    private String nama;
+    private String absen;
+    private String kelas;
+    
+    public Latihan_2_1(String nama, String kelas, String absen) {
+        this.nama = nama;
+        this.kelas = kelas;
+        this.absen = absen;
+    }
+    
+    public void cetak() {
+        System.out.println("Nama : " + this.nama);
+        System.out.println("Kelas : " + this.kelas);
+        System.out.println("Absen : " + this.absen);
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+class Latihan_2_2 extends Latihan_2_1 {
+    
+    private String NIS;
+    
+    public Latihan_2_2(String nama, String kelas, String absen, String NIS) {
+        //variabel super digunakan untuk mengakses variabel global di kelas yang berbeda
+        super(nama, kelas, absen);
+        //variabel this digunakan untuk mengakses variabel global dikelas yang sama
+        this.NIS = NIS;
+    }
+    
+    public void cetak() {
+        System.out.println("NIS : " + this.NIS);
+        super.cetak();
+    }
+}
+
+====== ======
+package pewarisan;
+
+public class Uji_Lat2 extends Latihan_2_2 {
+    
+    public Uji_Lat2(String nama, String kelas, String absen, String NIS) {
+        super(nama, kelas, absen, NIS);
+        super.cetak();
+    }
+    
+    public static void main(String[] args) {
+        Uji_Lat2 ako = new Uji_Lat2("ame", "xr1", "22", "21187");
+    }
+}
