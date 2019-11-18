@@ -1,0 +1,122 @@
+package pewarisan;
+
+public class Prak_1_1 {
+    
+    private int guru;
+    private int mapel;
+    private int siswa;
+    
+    public Prak_1_1(int guru, int mapel, int siswa) {
+        this.guru = guru;
+        this.mapel = mapel;
+        this.siswa = siswa;
+    }
+    
+    public void jumlahGuru(int jumlah) {
+        guru = jumlah;
+    }
+    
+    public void jumlahMapel(int jumapel) {
+        mapel = jumapel;
+    }
+    
+    public void jumlahSiswa(int jumsis) {
+        siswa = jumsis;
+    }
+    
+    public void cetak() {
+        System.out.println("jumlah guru " + this.guru);
+        System.out.println("jumlah siswa " + this.siswa);
+        System.out.println("jumlah mapel : " + this.mapel);
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+public class Prak_1_2 extends Prak_1_1 {
+    
+    private String NIS;
+    private int lama;
+    int guru;
+    int mapel;
+    int siswa;
+    
+    public Prak_1_2(int guru, int mapel, int siswa, String NIS, int lama) {
+        super(guru, mapel, siswa);
+        this.NIS = NIS;
+        this.lama = lama;
+    }
+    
+    public void isiNIS(String nis) {
+        NIS = nis;
+    }
+    
+    public void lamaMengajar(int tahun) {
+        lama = tahun;
+    }
+    
+    @Override
+    public void cetak() {
+        Prak_1_1 ku = new Prak_1_1(50, 15, 1500);
+        ku.cetak();
+        System.out.println("NIS : " + this.NIS);
+        System.out.println("lama belajar : " + this.lama);
+    }
+}
+
+====== ======
+
+package pewarisan;
+
+public class Prak_1_3 extends Prak_1_2 {
+    
+    private int umur;
+    private String kelas;
+    int guru;
+    int mapel;
+    int siswa;
+    String NIS;
+    int lama;
+    
+    public Prak_1_3(int guru, int mapel, int siswa, String NIS, int lama, int umur, String kelas) {
+        super(guru, mapel, siswa, NIS, lama);
+        this.umur = umur;
+        this.kelas = kelas;
+    }
+    
+    public void addUmur(int old) {
+        umur = old;
+    }
+    
+    public String getKelas() {
+        if (umur == 15) {
+            kelas = "10";
+            System.out.println(kelas);
+        } else if (umur == 16) {
+            kelas = "11";
+            System.out.println(kelas);
+        } else if (umur == 17) {
+            kelas = "12";
+            System.out.println(kelas);
+        } else {
+            if (umur < 15) {
+                kelas = "blom sma malah";
+                System.out.println(kelas);
+            } else {
+                kelas = "bisa jadi udah lulus";
+                System.out.println(kelas);
+            }
+        }
+        return kelas;
+    }
+    
+    @Override
+    public void cetak() {
+        Prak_1_2 ako = new Prak_1_2(50, 15, 1500, "21187", 3);
+        ako.cetak();
+        System.out.println("umur : " + this.umur);
+        System.out.println("kelas : " + this.kelas);
+    }
+}
