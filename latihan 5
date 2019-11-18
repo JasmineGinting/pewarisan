@@ -1,0 +1,32 @@
+package pewarisan;
+
+public class Latihan_5 {
+    //fields
+    public int penumpang;
+    public int kecepatan;
+    public int rem;
+    
+    //konstruktor
+    public Latihan_5(int penumpang_awal, int kecepatan_awal, int rem_awal) {
+        penumpang = penumpang_awal;
+        kecepatan = kecepatan_awal;
+        rem = rem_awal;
+    }
+    
+    //methods
+    public void setPenumpang(int penumpang) {
+        this.penumpang = penumpang;
+    }
+    
+    public void setKecepatan(int kecepatan) {
+        this.kecepatan = kecepatan;
+    }
+    
+    public void setPelambatan(int rem) {
+        this.rem = rem;
+    }
+    
+    public void addKecepatan(int temp) {
+        this.kecepatan = temp + this.kecepatan;
+    }
+}
